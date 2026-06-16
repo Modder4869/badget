@@ -154,9 +154,9 @@ public class Badget implements IXposedHookLoadPackage {
 
     // --- Optional logging hook (kept for compatibility) ---
     public void hookLog(String method) {
-        XposedHelpers.findAndHookMethod(Log.class, method, String.class, String.class, new XC_MethodHook() {
+        XposedHelpers.findAndHookMethod(Log.class, method, String.class, String.class, new XC_MethodHook()  {
             @Override
-            protected void beforeHookedMethod(MethodHookParam param) {
+            protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                 super.beforeHookedMethod(param);
                 XposedBridge.log("hookLog[" + param.args[0] + "] " + param.args[1]);
             }
