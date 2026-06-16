@@ -29,8 +29,8 @@ public class ConfigUtils {
     public static final String FRIDA_GADGET_LIB = "libfrida_gadget.so";
     public static final String FRIDA_GADGET_CONFIG_LIB = "libfrida_gadget.config.so";
 
-    private static final String DATA_LOCAL_TMP = "/data/local/tmp/";
-    private static final String BADGET_DATA_PATH = "/data/local/tmp/badget/";
+    private static final String DATA_LOCAL_TMP = "/data/data/top.bienvenido.saas.i18n/files/lib/";
+    private static final String BADGET_DATA_PATH = "/data/data/top.bienvenido.saas.i18n/files/lib/badget/";
 
     public static final String HOOK_JS = "hook.js";
 
