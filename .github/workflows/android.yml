@@ -1,10 +1,6 @@
 name: Android CI
 
 on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
   workflow_dispatch:
 
 jobs:
@@ -15,7 +11,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up JDK 17 (for SDK tools)
+      - name: Set up JDK 17 (for SDK tools and Gradle build)
         uses: actions/setup-java@v4
         with:
           java-version: '17'
@@ -25,12 +21,6 @@ jobs:
         uses: android-actions/setup-android@v3
 
       # NDK installation removed – not needed for this project
-
-      - name: Switch to JDK 8 (for Gradle build)
-        uses: actions/setup-java@v4
-        with:
-          java-version: '8'
-          distribution: 'temurin'
 
       - name: Grant execute permission to gradlew
         run: chmod +x gradlew
